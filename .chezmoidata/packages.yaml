@@ -1,0 +1,24 @@
+packages:
+  winget:
+    packages:
+    - 'Git.Git'
+    - 'Nushell.Nushell'
+    - 'Starship.Starship'
+    - 'rsteube.Carapace'
+    - 'Microsoft.VisualStudio.2022.Community'
+    - 'Microsoft.DotNet.Framework.DeveloperPack_4'
+    - 'Microsoft.DotNet.SDK.5'
+    - 'Microsoft.DotNet.SDK.6'
+    - 'beekeeper-studio.beekeeper-studio'
+    - 'Mozilla.Firefox.DeveloperEdition'
+    - 'Google.Chrome.Dev'
+    - 'Google.GoogleDrive'
+    - 'Bitwarden.Bitwarden'
+    - 'Spotify.Spotify'
+    - 'SlackTechnologies.Slack'
+  scoop:
+    buckets:
+    - 'nerd-fonts'
+    packages:
+    - 'nerd-fonts/FiraCode'
+    - 'nerd-fonts/JetBrains-Mono'

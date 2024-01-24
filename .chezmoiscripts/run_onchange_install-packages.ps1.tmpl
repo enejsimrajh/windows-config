@@ -1,0 +1,15 @@
+if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
+    Set-ExecutionPolicy RemoteSigned -Scope Process
+    Invoke-RestMethod get.scoop.sh | Invoke-Expression
+}
+
+{{ range .packages.winget.packages -}}
+winget install --exact --id {{ . | quote }}
+{{ end -}}
+{{ range .packages.scoop.buckets -}}
+scoop bucket add {{ . | quote }}
+{{ end -}}
+{{ range .packages.scoop.packages -}}
+scoop install {{ . | quote }}
+scoop update {{ . | quote }}
+{{ end -}}
