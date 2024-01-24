@@ -1,21 +1,43 @@
 packages:
   winget:
     packages:
-    - 'Git.Git'
-    - 'Nushell.Nushell'
-    - 'Starship.Starship'
-    - 'rsteube.Carapace'
-    - 'Microsoft.VisualStudio.2022.Community'
-    - 'Microsoft.DotNet.Framework.DeveloperPack_4'
-    - 'Microsoft.DotNet.SDK.5'
-    - 'Microsoft.DotNet.SDK.6'
-    - 'beekeeper-studio.beekeeper-studio'
-    - 'Mozilla.Firefox.DeveloperEdition'
-    - 'Google.Chrome.Dev'
-    - 'Google.GoogleDrive'
-    - 'Bitwarden.Bitwarden'
-    - 'Spotify.Spotify'
-    - 'SlackTechnologies.Slack'
+      - Git.Git
+      - Nushell.Nushell
+      - Starship.Starship
+      - rsteube.Carapace
+      - beekeeper-studio.beekeeper-studio
+      - Mozilla.Firefox.DeveloperEdition
+      - Google.Chrome.Dev
+      - Google.GoogleDrive
+      - Bitwarden.Bitwarden
+      - Spotify.Spotify
+      - SlackTechnologies.Slack
+    programs:
+      visualStudio:
+        id: 'Microsoft.VisualStudio.2022.Community'
+        components:
+          - Microsoft.Component.MSBuild
+          - Microsoft.Component.ClickOnce
+          - Microsoft.ComponentGroup.ClickOnce.Publish
+          - Microsoft.VisualStudio.Component.NuGet
+          - Microsoft.VisualStudio.Component.Roslyn.Compiler
+          - Microsoft.VisualStudio.Component.Roslyn.LanguageServices
+          - Microsoft.VisualStudio.Component.SQL.CLR
+          - Microsoft.VisualStudio.Component.SQL.LocalDB.Runtime
+          - Microsoft.VisualStudio.Component.IntelliCode
+          - Microsoft.VisualStudio.Component.Debugger.JustInTime
+          - Microsoft.VisualStudio.Component.DiagnosticTools
+          - Microsoft.VisualStudio.Component.EntityFramework
+          - Microsoft.VisualStudio.Component.IISExpress
+          - Microsoft.VisualStudio.Component.Web
+          - Microsoft.VisualStudio.Component.Node.Tools
+          - Microsoft.VisualStudio.ComponentGroup.WebToolsExtensions
+          - Microsoft.NetCore.Component.Web
+          - Microsoft.NetCore.Component.SDK
+          - Microsoft.Net.Component.4.8.SDK
+          - Component.Microsoft.VisualStudio.RazorExtension
+          - Component.Microsoft.WebTools.BrowserLink.WebLivePreview
+          - wasm.tools
   scoop:
     buckets:
     - 'nerd-fonts'

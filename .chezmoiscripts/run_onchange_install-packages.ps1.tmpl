@@ -3,12 +3,23 @@ if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
     Invoke-RestMethod get.scoop.sh | Invoke-Expression
 }
 
+{{ if hasKey .packages.winget "programs" }}
+    {{- $programs := .packages.winget.programs }}
+    {{- if hasKey $programs "visualStudio" -}}
+        {{- $program := get $programs "visualStudio" }}winget install --exact --id {{ get $program "id" | quote }} --override "--quiet
+        {{- if hasKey $program "components" }} --add {{ get $program "components" | join " " }}
+        {{- end }}"
+    {{- end }}
+{{- end }}
+
 {{ range .packages.winget.packages -}}
 winget install --exact --id {{ . | quote }}
 {{ end -}}
+
 {{ range .packages.scoop.buckets -}}
 scoop bucket add {{ . | quote }}
 {{ end -}}
+
 {{ range .packages.scoop.packages -}}
 scoop install {{ . | quote }}
 scoop update {{ . | quote }}
