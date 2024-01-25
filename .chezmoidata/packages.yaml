@@ -1,19 +1,33 @@
 packages:
   winget:
     packages:
-      - Git.Git
-      - Nushell.Nushell
-      - Starship.Starship
-      - rsteube.Carapace
-      - SublimeHQ.SublimeText.4
-      - beekeeper-studio.beekeeper-studio
-      - Bitwarden.Bitwarden
-      - Mozilla.Firefox.DeveloperEdition
-      - Google.Chrome.Dev
-      - Google.GoogleDrive
-      - SlackTechnologies.Slack
+      # Shell
+      - Nushell.Nushell # Modern shell
+      - Starship.Starship # Shell prompt
+      - rsteube.Carapace # Shell auto-completion
+
+      # CLI
+      - Git.Git # Version control
+
+      # GUI
+      - Bitwarden.Bitwarden # Password manager
+      - SublimeHQ.SublimeText.4 # Text editor
+      - dbeaver.dbeaver # Database client
+      - KDE.KDiff3 # Diff tool
+      - SlackTechnologies.Slack # Communications
+      - OpenVPNTechnologies.OpenVPNConnect # VPN client # TODO: install only on remote work machines
       # - Spotify.Spotify # TODO: install only on work pc
-      - OpenVPNTechnologies.OpenVPNConnect # TODO: install only on home vm
+
+      # Browsers
+      - Google.Chrome # Default browser
+      - Mozilla.Firefox.DeveloperEdition # Development (debugging) browser
+
+      # Services
+      - Google.GoogleDrive # Cloud storage
+      - Datalust.Seq # Log management
+
+      # Workloads
+      - OpenJS.NodeJS
     programs:
       visualStudio:
         id: 'Microsoft.VisualStudio.2022.Community'
@@ -24,6 +38,7 @@ packages:
           - Microsoft.Component.MSBuild
           - Microsoft.ComponentGroup.ClickOnce.Publish
           - Microsoft.Net.Component.4.8.SDK
+          - Microsoft.Net.Component.4.8.TargetingPack  
           - Microsoft.NetCore.Component.SDK
           - Microsoft.NetCore.Component.Web
           - Microsoft.VisualStudio.Component.Debugger.JustInTime
