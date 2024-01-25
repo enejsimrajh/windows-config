@@ -5,38 +5,40 @@ packages:
       - Nushell.Nushell
       - Starship.Starship
       - rsteube.Carapace
+      - SublimeHQ.SublimeText.4
       - beekeeper-studio.beekeeper-studio
+      - Bitwarden.Bitwarden
       - Mozilla.Firefox.DeveloperEdition
       - Google.Chrome.Dev
       - Google.GoogleDrive
-      - Bitwarden.Bitwarden
-      - Spotify.Spotify
       - SlackTechnologies.Slack
+      # - Spotify.Spotify # TODO: install only on work pc
+      - OpenVPNTechnologies.OpenVPNConnect # TODO: install only on home vm
     programs:
       visualStudio:
         id: 'Microsoft.VisualStudio.2022.Community'
         components:
-          - Microsoft.Component.MSBuild
+          - Component.Microsoft.VisualStudio.RazorExtension
+          - Component.Microsoft.WebTools.BrowserLink.WebLivePreview
           - Microsoft.Component.ClickOnce
+          - Microsoft.Component.MSBuild
           - Microsoft.ComponentGroup.ClickOnce.Publish
+          - Microsoft.Net.Component.4.8.SDK
+          - Microsoft.NetCore.Component.SDK
+          - Microsoft.NetCore.Component.Web
+          - Microsoft.VisualStudio.Component.Debugger.JustInTime
+          - Microsoft.VisualStudio.Component.DiagnosticTools
+          - Microsoft.VisualStudio.Component.EntityFramework
+          - Microsoft.VisualStudio.Component.IISExpress
+          - Microsoft.VisualStudio.Component.IntelliCode
+          - Microsoft.VisualStudio.Component.Node.Tools
           - Microsoft.VisualStudio.Component.NuGet
           - Microsoft.VisualStudio.Component.Roslyn.Compiler
           - Microsoft.VisualStudio.Component.Roslyn.LanguageServices
           - Microsoft.VisualStudio.Component.SQL.CLR
           - Microsoft.VisualStudio.Component.SQL.LocalDB.Runtime
-          - Microsoft.VisualStudio.Component.IntelliCode
-          - Microsoft.VisualStudio.Component.Debugger.JustInTime
-          - Microsoft.VisualStudio.Component.DiagnosticTools
-          - Microsoft.VisualStudio.Component.EntityFramework
-          - Microsoft.VisualStudio.Component.IISExpress
           - Microsoft.VisualStudio.Component.Web
-          - Microsoft.VisualStudio.Component.Node.Tools
           - Microsoft.VisualStudio.ComponentGroup.WebToolsExtensions
-          - Microsoft.NetCore.Component.Web
-          - Microsoft.NetCore.Component.SDK
-          - Microsoft.Net.Component.4.8.SDK
-          - Component.Microsoft.VisualStudio.RazorExtension
-          - Component.Microsoft.WebTools.BrowserLink.WebLivePreview
           - wasm.tools
   scoop:
     buckets:

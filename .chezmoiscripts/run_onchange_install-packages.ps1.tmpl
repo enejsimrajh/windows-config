@@ -1,8 +1,10 @@
+# Install scoop if not yet installed
 if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
     Set-ExecutionPolicy RemoteSigned -Scope Process
     Invoke-RestMethod get.scoop.sh | Invoke-Expression
 }
 
+# Install Winget programs
 {{ if hasKey .packages.winget "programs" }}
     {{- $programs := .packages.winget.programs }}
     {{- if hasKey $programs "visualStudio" -}}
@@ -12,14 +14,17 @@ if (!(Get-Command scoop -ErrorAction SilentlyContinue)) {
     {{- end }}
 {{- end }}
 
+# Install Winget packages
 {{ range .packages.winget.packages -}}
 winget install --exact --id {{ . | quote }}
 {{ end -}}
 
+# Install scoop buckets
 {{ range .packages.scoop.buckets -}}
 scoop bucket add {{ . | quote }}
 {{ end -}}
 
+# Install scoop packages
 {{ range .packages.scoop.packages -}}
 scoop install {{ . | quote }}
 scoop update {{ . | quote }}
