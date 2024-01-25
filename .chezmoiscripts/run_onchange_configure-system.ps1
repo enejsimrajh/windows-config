@@ -57,14 +57,11 @@ Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Siuf\Rules" "NumberOfSIUFInPeriod" 0
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" "AllowTelemetry" 1
 Set-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" "MaxTelemetryAllowed" 1
 
-# Power: Disable Hibernation
-powercfg /hibernate off
+# Explorer: Show hidden files by default: Show Files: 1, Hide Files: 2
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "Hidden" 1
 
-# Power: Set standby delay to 30 minutes
-powercfg /change /standby-timeout-ac 30
-
-# Explorer: Show hidden files, show protected OS files, show file extensions
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
+# Explorer: Show file extensions by default: Hide: 1, Show: 0
+Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "HideFileExt" 0
 
 # Explorer: Expand explorer to the actual folder you're in
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneExpandToCurrentFolder -Value 1
@@ -86,4 +83,10 @@ Set-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" "Searc
 Set-ItemProperty "HKCU:\SOFTWARE\Microsoft\Narrator\NoRoam" "WinEnterLaunchEnabled" 0
 
 # Sign-in: Disable Windows Hello: Enable: 1, Disable: 0
-Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowSignInOptions -Name value -Value 0
+# Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\PolicyManager\default\Settings\AllowSignInOptions -Name value -Value 0
+
+# Power: Disable Hibernation
+powercfg /hibernate off
+
+# Power: Set standby delay to 30 minutes
+powercfg /change /standby-timeout-ac 30
