@@ -12,7 +12,8 @@ packages:
       # GUI
       - Bitwarden.Bitwarden # Password manager
       - SublimeHQ.SublimeText.4 # Text editor
-      - dbeaver.dbeaver # Database client
+      - dbeaver.dbeaver # Database manager
+      - beekeeper-studio.beekeeper-studio # Database client
       - KDE.KDiff3 # Diff tool
       - SlackTechnologies.Slack # Communications
       - OpenVPNTechnologies.OpenVPNConnect # VPN client # TODO: install only on remote work machines
@@ -28,6 +29,7 @@ packages:
 
       # Workloads
       - OpenJS.NodeJS
+      - Microsoft.SQLServer.2019.Developer
     programs:
       visualStudio:
         id: 'Microsoft.VisualStudio.2022.Community'
@@ -51,7 +53,6 @@ packages:
           - Microsoft.VisualStudio.Component.Roslyn.Compiler
           - Microsoft.VisualStudio.Component.Roslyn.LanguageServices
           - Microsoft.VisualStudio.Component.SQL.CLR
-          - Microsoft.VisualStudio.Component.SQL.LocalDB.Runtime
           - Microsoft.VisualStudio.Component.Web
           - Microsoft.VisualStudio.ComponentGroup.WebToolsExtensions
           - wasm.tools
